@@ -26,7 +26,7 @@ public class Container{
     }
 
     public void moveFrom( Container src, int val ){
-        this.add( src.remove( val ) );
+        src.add( this.remove( val ) );
     }
 
     public Integer contains( ){

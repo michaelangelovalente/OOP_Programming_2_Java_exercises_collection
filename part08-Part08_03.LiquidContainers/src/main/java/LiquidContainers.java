@@ -9,7 +9,7 @@ public class LiquidContainers {
         Container cont2 = new Container();
 
         while (true) {
-            System.out.print("> ");
+            System.out.print("First: " + cont1.contains() + "/100\n" + "Second: " + cont2.contains() + "/100\n");
 
             String input = scan.nextLine();
 
@@ -24,9 +24,9 @@ public class LiquidContainers {
             }else if( parts[0].equals( "move" ) ){
                 cont1.moveFrom( cont2, Integer.valueOf( parts[1] ) );
             }else if( parts[0].equals( "remove" ) ){
-                cont1.remove( Integer.valueOf( parts[1] ) );
+                cont2.remove( Integer.valueOf( parts[1] ) );
             }
-            /*Need to finish!*/
+
         }
     }
 
