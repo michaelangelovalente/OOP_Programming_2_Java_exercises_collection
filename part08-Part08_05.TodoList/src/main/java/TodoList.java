@@ -8,7 +8,11 @@ public class TodoList{
     }
     /*
     public void add(String task) - add the task passed as a parameter to the todo list.
-    public void print() - prints the exercises. Each task has a number associated with it on the print statement — use the task's index here (+1).
+
+    public void print() - prints the exercises. 
+    Each task has a number associated with it on the print statement — 
+    use the task's index here (+1).
+
     public void remove(int number) - removes the task associated with the given number; the number is the one seen associated with the task in the print.
     */
 
@@ -18,9 +22,21 @@ public class TodoList{
             if( task.equals( item )){
                 break;
             }else if( !(item.equals( items.get( items.size()-1 )) )) {
-                /*task is not present in task. We can add it without duplicates*/
-                
-            };
+                /*task is not present in items. We can add it without duplicates*/
+                this.items.add( task );
+            }
         }
+    }
+
+    public void print(){
+        for( int i = 0 ; i < this.items.size(); i++ ){
+            System.out.println( (i+1) + ": " + this.items.get(i) );
+        }
+    }
+
+    /*public void remove(int number) - removes the task associated with the given number; 
+    the number is the one seen associated with the task in the print.*/
+    public void remove(int number){
+        this.items.remove( number );
     }
 }
