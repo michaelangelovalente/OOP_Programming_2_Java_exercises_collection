@@ -9,15 +9,7 @@ public class UserInterface{
     }
 
     public void start(){
-        /*
-        The text UI works with an eternal looping statement (while-true), 
-        and it must offer the following commands to the user:
-
-        
-        
-        The commmand list prints all the tasks on the to-do list.
-        The command remove asks the user to enter the id of the task to be removed. When this has been entered, the specified task should be removed from the list of tasks.
-        */
+    
 
         while( true ){
             System.out.print("Command: ");
@@ -31,6 +23,7 @@ public class UserInterface{
                 myList.print();
             }else if( command.equals( "remove" ) ){
                 System.out.print( "Which one is removed?" );
+                this.myList.remove( Integer.valueOf( scan.nextLine() ) );
             }
 
            
