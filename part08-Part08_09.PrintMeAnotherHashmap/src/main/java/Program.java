@@ -25,7 +25,7 @@ public class Program {
         for( Book book : hashmap.values() ){
             String name  = book.getName();
             if( name.contains( sanitizeString( text ) )){
-                System.out.println( name );
+                System.out.println( book.toString() );
             }
         }
     }
