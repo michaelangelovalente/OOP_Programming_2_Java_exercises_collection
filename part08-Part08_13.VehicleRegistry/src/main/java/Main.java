@@ -1,5 +1,5 @@
 
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -32,4 +32,39 @@ public class Main {
         System.out.println(owners.get(new LicensePlate("D", "B WQ-431")));
         // if the hasCode-method hasn't been overwritten, the owners won't be found
     }
+}
+*/
+import java.util.HashMap;
+import java.util.ArrayList;
+
+public class Main{
+    public static void main( String[] args ){
+        LicensePlate li1 = new LicensePlate("FI", "ABC-123");
+        LicensePlate li2 = new LicensePlate("FI", "UXE-465");
+        LicensePlate li3 = new LicensePlate("D", "B WQ-431");
+
+        ArrayList<LicensePlate> finnishPlates = new ArrayList<>();
+        finnishPlates.add(li1);
+        finnishPlates.add(li2);
+
+        LicensePlate newLi = new LicensePlate("FI", "ABC-123");
+        if(!finnishPlates.contains(newLi)){
+            System.out.println("FI, ABC-123 is not contained in finnishPlates, which is... incorrect.");
+            finnishPlates.add(newLi);
+        }
+        System.out.println("Finnish: " + finnishPlates);
+        //if the equals-method hasn't been overwritten,
+        //the same license number will be added to the list
+        //again.
+
+        HashMap<LicensePlate, String> owners = new HashMap<>();
+        owners.put(li1, "Arto");
+        owners.put(li3, "Jurgen");
+
+        System.out.println("omistajat:");
+        System.out.println( owners.get( new LicensePlate("FI", "ABC-123") ) );
+        System.out.println( owners.get( new LicensePlate( "D", "B WQ-431" ) ) );
+        // if the hashCode-method hasn't been overwritten, the 
+        // owners won't be found
+    }    
 }

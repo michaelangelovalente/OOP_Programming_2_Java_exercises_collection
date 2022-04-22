@@ -51,4 +51,27 @@ public class SimpleDate {
         return this.year - other.year - yearRemoved;
     }
 
+    /**
+     * equals
+     * 
+     * returns true if the date of the object passed to the method
+     * as a parameter is the same as the date of
+     * the object used to call the method.
+     * 
+     * 
+    */
+    @Override
+    public boolean equals(Object object){
+        if( this == object){
+            return true;
+        }
+        if( !(object instanceof SimpleDate)){
+            return false;
+        }
+
+        SimpleDate comparedDate = (SimpleDate) object;
+
+        return (this.day == comparedDate.day && this.month == comparedDate.month && this.year == comparedDate.year );
+    }
+
 }

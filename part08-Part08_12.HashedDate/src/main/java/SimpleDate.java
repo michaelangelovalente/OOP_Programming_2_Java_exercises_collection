@@ -1,4 +1,5 @@
 
+
 public class SimpleDate {
 
     private int day;
@@ -50,5 +51,44 @@ public class SimpleDate {
 
         return this.year - other.year - yearRemoved;
     }
+
+
+    @Override
+    public boolean equals(Object object){
+        if( this == object ){
+            return true;
+        }
+
+        if( !(object instanceof SimpleDate)){
+            return false;
+        }
+
+        SimpleDate objectDate = (SimpleDate) object;
+
+        if( objectDate.day == this.day && objectDate.month == this.month && objectDate.year == this.year){
+            return true;
+        }
+
+        return false ;
+    }
+
+
+    /**
+     * hashCode
+     * Calculates a hash for the the SimpleDate object. Implement the calculation of the hash in way 
+     * that there are as few similar hashes as possible between the years 1900 and 2100.
+     * */
+    
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 37 * hash + this.day;
+        hash = 37 * hash + this.month;
+        hash = 37 * hash + this.year;
+        return hash;
+    }
+
+
 
 }
