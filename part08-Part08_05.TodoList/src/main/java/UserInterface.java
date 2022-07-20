@@ -1,33 +1,32 @@
 import java.util.Scanner;
 
 public class UserInterface{
-    private TodoList myList;
+    private TodoList list;
     private Scanner scan;
-    public UserInterface( TodoList myList, Scanner scan ){
-        this.myList = myList;
-        this.scan = scan;
+    public UserInterface(TodoList list, Scanner scanner){
+        this.list = list;
+        this.scan = scanner;
     }
 
     public void start(){
-    
+         
+        while(true){
+            System.out.println("Command: ");
+            String command = scan.nextLine();
 
-        while( true ){
-            System.out.print("Command: ");
-            String command = this.scan.nextLine();
-            if( command.equals( "stop" ) ){
+            if( command.toLowerCase().equals("stop"))
                 break;
-            }else if( command.equals( "add" ) ){
-                System.out.print("To add: ");
-                myList.add( this.scan.nextLine( ) );
-            }else if( command.equals( "list" ) ){
-                myList.print();
-            }else if( command.equals( "remove" ) ){
-                System.out.print( "Which one is removed?" );
-                this.myList.remove( Integer.valueOf( scan.nextLine() ) );
+            if( command.toLowerCase().equals("add")){
+                System.out.println("To add: ");
+                command = scan.nextLine();
+                list.add(command);
+            }else if( command.toLowerCase().equals("remove")){
+                System.out.println("Which one is removed?");
+                list.remove( Integer.valueOf(scan.nextLine()));
+            }else if( command.toLowerCase().equals("list")){
+                
+                list.print();
             }
-
-           
-            
-        }
+        }   
     }
 }

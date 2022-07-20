@@ -1,35 +1,34 @@
 public class Container{
-    private Integer liters;
+    private int amount;
     public Container(){
-        this.liters = 0;
+        this.amount = 0; 
     }
 
-
-    public void add( int val ){
-        if( val > 0 ){
-            this.liters += val;
-            if( this.liters >= 100 ){
-                this.liters = 100;
-            } 
+    public void add(Integer amount ){
+        if( amount > 0 ){
+            this.amount += amount;
         }
-        
-    }
 
-    public int remove( int val ){
-        this.liters -= val;
-        if( this.liters < 0 ){
-            int tmp = this.liters;
-            this.liters = 0;
-            return val + tmp;
+        if( this.amount > 100 ){
+            this.amount = 100;
         }
-        return val;
     }
 
-    public void moveFrom( Container src, int val ){
-        src.add( this.remove( val ) );
+    public Integer remove( Integer removeAmount ){
+        int output = 0;
+        if( removeAmount > 0 ){
+            output = removeAmount;
+            if( this.amount - removeAmount < 0 ){
+                output = this.amount;
+                this.amount = 0;
+            }else{
+                this.amount -= removeAmount;
+            }
+        }
+        return output;
+    }
+    public Integer currentAmount(){
+        return this.amount;
     }
 
-    public Integer contains( ){
-        return this.liters;
-    }
 }

@@ -1,18 +1,19 @@
-
 import java.util.HashMap;
+//import java.util.Scanner;
 
-public class Nicknames {
+public class Nicknames{
+    public static void main(String[] args){
 
-    public static void main(String[] args) {
-        // Do the operations required here!
-        HashMap< String, String > nickN = new HashMap<>();
+        HashMap<String, String> nickname = new HashMap<>();
+        nickname.put("matthew", "matt");
+        nickname.put("michael", "mix");
+        nickname.put("arthur", "artie");
 
-        String extract[] = {"matthew's nickname is matt", "michael's nickname is mix", "arthur's nickname is artie"};
-        for( String sentence : extract ){
-            String namesAndNicks[] = sentence.split( "'s nickname is " );
-            nickN.put( namesAndNicks[0] , namesAndNicks[1] );
-        }
+        System.out.println(nickname.get("matthew"));
+        System.out.println(nickname.get("michael"));
+        System.out.println(nickname.get("arthur"));
+
         
-    }
 
+    }
 }

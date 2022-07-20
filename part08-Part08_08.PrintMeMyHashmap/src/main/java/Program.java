@@ -1,51 +1,44 @@
-
 import java.util.HashMap;
 
-public class Program { 
-    /*
-        public static void printKeys(HashMap<String,String> hashmap), prints all the keys in the hashmap given as a parameter.
+public class Program{
 
-        public static void printKeysWhere(HashMap<String,String> hashmap, String text) prints the keys in the hashmap given as a parameter,
-        which contain the string given as a parameter.
+    public static void printKeys(HashMap<String, String> hashmap){
+        for( String abbreviation: hashmap.keySet()){
+            System.out.println(abbreviation);
+        }
+    }
 
-        public static void printValuesOfKeysWhere(HashMap<String,String> hashmap, String text), prints the values in the given hashmap whichs keys contain the given string.
+    public static void printKeysWhere(HashMap<String, String> hashmap, String text){
+
+        for( String abbreviation : hashmap.keySet()){
+            if( sanitize(abbreviation).contains( sanitize( text))){
+                System.out.println( abbreviation );
+            }
+        }
+
+    }
+
+    public static void printValuesOfKeysWhere(HashMap<String,String> hashmap, String text){
+        for( String abbreviation : hashmap.keySet()){
+            if( sanitize(abbreviation).contains(sanitize(text)) ){
+                System.out.println(hashmap.get(abbreviation));
+            }
+        }
+    }
+
+    public static String sanitize( String string ){
+        return string.trim().toLowerCase();
+    }
+
+    /* 
+    public static void main(String args[]){
+        HashMap<String, String> hm = new HashMap();
+        hm.put("abcd", "jkl");
+        hm.put("def", "mno");
+        hm.put("ghi", "pqr");
+
+        printKeysWhere(hm, "a");
+
+    }*/
     
-    */
-    /*Prints all the keys in the hashmap given as a parameter. */
-    public static void printKeys( HashMap< String, String > hashmap ){
-        for( String key : hashmap.keySet() ){
-            System.out.println( key );
-        }
-    }
-
-    /*Prints the keys in the hashmap given as a parameter, which contain the string given as a parameter.*/
-    public static void printKeysWhere( HashMap< String, String > hashmap, String test){
-        /* need to clean string */
-        test  = sanitizeString( test );
-        for( String key: hashmap.keySet() ){
-            if( key.contains( test )){
-                System.out.println( key );
-            }
-        }
-    }
-
-    /*prints the values in the given hashmap which keys contain the given string*/
-    public static void printValuesOfKeysWhere( HashMap< String, String > hashmap, String text ){
-        text = sanitizeString( text );
-        for( String key : hashmap.keySet() ){
-            if( key.contains( text ) ){
-                System.out.println( hashmap.get( key ) );
-            }
-        }
-    }
-
-    public static String sanitizeString( String string ){
-        string = string.trim().toLowerCase();
-        return string;
-    }
-
-    public static void main(String[] args) {
-        // Test your program here!
-    }
-
 }

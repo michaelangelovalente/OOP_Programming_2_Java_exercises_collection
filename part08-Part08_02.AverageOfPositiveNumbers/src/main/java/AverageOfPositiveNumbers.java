@@ -1,27 +1,26 @@
-
 import java.util.Scanner;
 
-public class AverageOfPositiveNumbers {
-
-    public static void main(String[] args) {
+public class AverageOfPositiveNumbers{
+    public static void main(String args[]){
         Scanner scanner = new Scanner(System.in);
-        Integer  num = 0, den = 0;
-        
+        Integer  number = 0, counter = 0;
         while( true ){
-            Integer tmp = Integer.valueOf( scanner.nextLine() ) ;
-            if( tmp == 0){
+            Integer tmp = 0;
+            tmp = Integer.valueOf(scanner.nextLine());
+            
+            if( tmp==0 ){
                 break;
             }else if( tmp > 0){
-                num += tmp;
-                den++;
-            }            
+                number += tmp;
+                counter++;
+            }
         }
-
-        if( num <= 0 ){
-            System.out.println("Cannot calculate the average");
+        if( counter > 0 ){
+            System.out.println((double) number/counter);
         }else{
-            System.out.println( ((double) num) / den );
+            System.out.println("Cannot calculate the average.");
         }
+        
 
     }
 }
