@@ -15,6 +15,10 @@ public class Item{
         return this.unitPrice * this.qty;
     }
 
+    public int quantity(){
+        return this.qty;
+    }
+    
     // increases the quantity by one.
     public void increaseQuantity(){
         this.qty++;
