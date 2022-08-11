@@ -1,6 +1,6 @@
 
 
-public interface Movable {
+public interface Movable{
 
     void move(int dx, int dy);
 }

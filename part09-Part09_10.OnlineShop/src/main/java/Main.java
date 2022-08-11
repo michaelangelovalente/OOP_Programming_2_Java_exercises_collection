@@ -93,7 +93,7 @@ public class Main {
          Scanner scanner = new Scanner(System.in);
 
          Store store = new Store(warehouse, scanner);
-         store.shop("Giovanni");
+         store.shop("Giovanniz");
 
         
         
