@@ -1,0 +1,5 @@
+ohjelmointi-1:programming-1
+alla oleva:below
+apina:monkey
+olut:beer
+ohjelmointi:programming
